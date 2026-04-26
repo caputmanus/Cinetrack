@@ -24,7 +24,7 @@ import AppLoader from './components/AppLoader.vue'
   padding: 0;
 }
 
-/* ─── Светлая тема (default) ─── */
+/*  Светлая тема (default)  */
 :root {
   --bg:           #f4f3ef;
   --surface:      #ffffff;
@@ -45,7 +45,7 @@ import AppLoader from './components/AppLoader.vue'
   --transition:   0.18s ease;
 }
 
-/* ─── Тёмная тема ─── */
+/*  Тёмная тема  */
 [data-theme="dark"] {
   --bg:           #111010;
   --surface:      #1c1b1a;
@@ -64,7 +64,7 @@ import AppLoader from './components/AppLoader.vue'
   --shadow-lg:    0 8px 32px rgba(0,0,0,0.55);
 }
 
-/* ─── Цветовые схемы ─── */
+/*  Цветовые схемы  */
 [data-scheme="indigo"] {
   --primary: #4f46e5; --primary-hover: #4338ca; --primary-dim: rgba(79,70,229,0.10);
 }
@@ -98,7 +98,7 @@ body {
   width: 100%;
 }
 
-/* ─── Общие переиспользуемые стили ─── */
+/*  Общие переиспользуемые стили  */
 a { color: var(--primary); text-decoration: none; }
 
 button {

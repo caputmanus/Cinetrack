@@ -1,13 +1,13 @@
 import { ref } from 'vue'
 import { getSettings, saveSettings } from '../services/storage.js'
 
-// ─── Singleton: состояние хранится на уровне модуля ───────────────────────
+//  Singleton: состояние хранится на уровне модуля 
 const theme         = ref('light')
 const colorScheme   = ref('cinema')  // cinema | indigo | teal | rose
 const viewMode      = ref('cards')   // cards | table
 const confirmDelete = ref(true)
 
-// ─── Инициализация из localStorage ────────────────────────────────────────
+//  Инициализация из localStorage 
 const stored = getSettings()
 if (stored) {
   theme.value         = stored.theme         ?? 'light'
@@ -19,7 +19,7 @@ if (stored) {
 // Применить тему к документу при старте
 applyToDocument()
 
-// ─── Вспомогательная функция применения атрибутов ─────────────────────────
+//  Вспомогательная функция применения атрибутов 
 function applyToDocument() {
   document.documentElement.setAttribute('data-theme',  theme.value)
   document.documentElement.setAttribute('data-scheme', colorScheme.value)

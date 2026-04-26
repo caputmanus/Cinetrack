@@ -76,7 +76,7 @@ function formatDate(ts) {
   opacity: 0.85;
 }
 
-/* ─── Header ─── */
+/*  Header  */
 .card__header {
   display: flex;
   align-items: center;
@@ -103,7 +103,7 @@ function formatDate(ts) {
   border-radius: 20px;
 }
 
-/* ─── Title ─── */
+/*  Title  */
 .card__title {
   font-family: 'Syne', sans-serif;
   font-size: 1.05rem;
@@ -118,7 +118,7 @@ function formatDate(ts) {
   color: var(--text-muted);
 }
 
-/* ─── Description ─── */
+/*  Description  */
 .card__desc {
   color: var(--text-muted);
   font-size: 0.875rem;
@@ -131,7 +131,7 @@ function formatDate(ts) {
   overflow: hidden;
 }
 
-/* ─── Footer ─── */
+/*  Footer  */
 .card__footer {
   display: flex;
   justify-content: space-between;

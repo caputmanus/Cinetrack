@@ -1,10 +1,10 @@
-// ─── Ключи хранилища ──────────────────────────────────────────────────────
+// Ключи хранилища
 const KEYS = {
   USERS:   'cinetrack_users',
   SESSION: 'cinetrack_session'
 }
 
-// ─── Простое хэширование пароля (не крипто, но не хранить plaintext) ──────
+// Простое хэширование пароля (не крипто, но не хранить plaintext)
 function hashPassword(password) {
   let hash = 0
   for (let i = 0; i < password.length; i++) {
@@ -14,7 +14,7 @@ function hashPassword(password) {
   return hash.toString(16)
 }
 
-// ─── Получить всех пользователей ──────────────────────────────────────────
+// Получить всех пользователей
 function getUsers() {
   try {
     const raw = localStorage.getItem(KEYS.USERS)
@@ -25,7 +25,7 @@ function getUsers() {
   }
 }
 
-// ─── Сохранить список пользователей ───────────────────────────────────────
+// Сохранить список пользователей
 function saveUsers(users) {
   try {
     localStorage.setItem(KEYS.USERS, JSON.stringify(users))
@@ -34,7 +34,7 @@ function saveUsers(users) {
   }
 }
 
-// ─── Регистрация нового пользователя ──────────────────────────────────────
+// Регистрация нового пользователя
 export function registerUser(login, password) {
   const users = getUsers()
 
@@ -57,7 +57,7 @@ export function registerUser(login, password) {
   return { ok: true, user: { id: newUser.id, login: newUser.login } }
 }
 
-// ─── Вход по логину и паролю ──────────────────────────────────────────────
+// Вход по логину и паролю
 export function loginUser(login, password) {
   const users = getUsers()
   const user = users.find(
@@ -72,7 +72,7 @@ export function loginUser(login, password) {
   return { ok: true, user: { id: user.id, login: user.login } }
 }
 
-// ─── Сохранить сессию ─────────────────────────────────────────────────────
+// Сохранить сессию
 function saveSession(user) {
   try {
     localStorage.setItem(KEYS.SESSION, JSON.stringify({
@@ -84,7 +84,7 @@ function saveSession(user) {
   }
 }
 
-// ─── Получить текущую сессию ──────────────────────────────────────────────
+// Получить текущую сессию
 export function getSession() {
   try {
     const raw = localStorage.getItem(KEYS.SESSION)
@@ -95,7 +95,7 @@ export function getSession() {
   }
 }
 
-// ─── Выйти (удалить сессию) ───────────────────────────────────────────────
+// Выйти (удалить сессию)
 export function logoutUser() {
   try {
     localStorage.removeItem(KEYS.SESSION)

@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-// ─── Singleton: состояние хранится на уровне модуля ───────────────────────
+//  Singleton: состояние хранится на уровне модуля 
 const isLoading = ref(false)
 
 export function useLoader() {
