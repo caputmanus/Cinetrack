@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { getSession, loginUser, registerUser, logoutUser } from '../services/auth.js'
 
-// ─── Singleton: состояние хранится на уровне модуля ───────────────────────
+// Singleton: состояние хранится на уровне модуля 
 const currentUser = ref(getSession())
 
 export function useAuth() {

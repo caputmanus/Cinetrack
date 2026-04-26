@@ -1,10 +1,10 @@
-// ─── Ключи хранилища (вынесены в константы) ───────────────────────────────
+// Ключи хранилища (вынесены в константы)
 const KEYS = {
   ITEMS:    'cinetrack_items',
   SETTINGS: 'cinetrack_settings'
 }
 
-// ─── Начальные демо-данные ─────────────────────────────────────────────────
+// Начальные демо-данные
 const DEMO_ITEMS = [
   {
     id: crypto.randomUUID(),
@@ -44,7 +44,7 @@ const DEMO_ITEMS = [
   }
 ]
 
-// ─── Чтение фильмов из localStorage ───────────────────────────────────────
+//  Чтение фильмов из localStorage 
 export function getItems() {
   try {
     const raw = localStorage.getItem(KEYS.ITEMS)
@@ -55,7 +55,7 @@ export function getItems() {
   }
 }
 
-// ─── Сохранение фильмов в localStorage ────────────────────────────────────
+//  Сохранение фильмов в localStorage 
 export function saveItems(items) {
   try {
     localStorage.setItem(KEYS.ITEMS, JSON.stringify(items))
@@ -64,7 +64,7 @@ export function saveItems(items) {
   }
 }
 
-// ─── Чтение настроек из localStorage ──────────────────────────────────────
+//  Чтение настроек из localStorage 
 export function getSettings() {
   try {
     const raw = localStorage.getItem(KEYS.SETTINGS)
@@ -75,7 +75,7 @@ export function getSettings() {
   }
 }
 
-// ─── Сохранение настроек в localStorage ───────────────────────────────────
+//  Сохранение настроек в localStorage 
 export function saveSettings(settings) {
   try {
     localStorage.setItem(KEYS.SETTINGS, JSON.stringify(settings))
@@ -84,7 +84,7 @@ export function saveSettings(settings) {
   }
 }
 
-// ─── Инициализация начальными данными, если хранилище пусто ───────────────
+//  Инициализация начальными данными, если хранилище пусто 
 export function initDataIfEmpty() {
   const existing = getItems()
   if (existing.length === 0) {
@@ -93,3 +93,4 @@ export function initDataIfEmpty() {
   }
   return existing
 }
+

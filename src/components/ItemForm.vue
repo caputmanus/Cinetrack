@@ -1,7 +1,7 @@
 <template>
   <form class="item-form" @submit.prevent="handleSubmit" novalidate>
 
-    <!-- ─── Название ─── -->
+    <!-- Название -->
     <div class="form-group" :class="{ 'form-group--error': errors.title }">
       <label for="f-title">Название фильма *</label>
       <input
@@ -13,7 +13,7 @@
       <span class="form-error" v-if="errors.title">{{ errors.title }}</span>
     </div>
 
-    <!-- ─── Описание ─── -->
+    <!-- Описание -->
     <div class="form-group" :class="{ 'form-group--error': errors.description }">
       <label for="f-desc">Описание *</label>
       <textarea
@@ -25,7 +25,7 @@
       <span class="form-error" v-if="errors.description">{{ errors.description }}</span>
     </div>
 
-    <!-- ─── Жанр ─── -->
+    <!-- Жанр -->
     <div class="form-group" :class="{ 'form-group--error': errors.category }">
       <label for="f-cat">Жанр *</label>
       <select id="f-cat" v-model="form.category">
@@ -35,7 +35,7 @@
       <span class="form-error" v-if="errors.category">{{ errors.category }}</span>
     </div>
 
-    <!-- ─── Кнопки ─── -->
+    <!-- Кнопки -->
     <div class="form-actions">
       <router-link to="/" class="btn-cancel">Отмена</router-link>
       <button type="submit" class="btn-submit">{{ submitLabel }}</button>
@@ -68,7 +68,7 @@ watch(() => props.initial, val => {
   form.category    = val.category
 }, { deep: true })
 
-// ─── Валидация ───────────────────────────────────────────────────────────
+// Валидация
 function validate() {
   errors.title       = ''
   errors.description = ''

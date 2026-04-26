@@ -35,23 +35,23 @@ const router = createRouter({
 
 const { showLoader, hideLoader } = useLoader()
 
-// ─── Guard: показать лоадер + проверить авторизацию ───────────────────────
+// Guard: показать лоадер + проверить авторизацию
 router.beforeEach((to) => {
   showLoader()
 
-  // Если маршрут не публичный и нет сессии — редирект на /login
+  // Если маршрут не публичный и нет сессии - редирект на /login
   const isLoggedIn = !!getSession()
   if (!to.meta.public && !isLoggedIn) {
     return '/login'
   }
 
-  // Если уже залогинен и пытается зайти на /login — на главную
+  // Если уже залогинен и пытается зайти на /login - на главную
   if (to.path === '/login' && isLoggedIn) {
     return '/'
   }
 })
 
-// ─── Скрыть лоадер после перехода (небольшая задержка для плавности) ──────
+// Скрыть лоадер после перехода (небольшая задержка для плавности)
 router.afterEach(() => {
   setTimeout(() => hideLoader(), 400)
 })
