@@ -1,9 +1,9 @@
-// ─── Вставь свой API ключ с https://www.themoviedb.org/settings/api ────────
-const API_KEY = 'ВСТАВЬ_СВОЙ_КЛЮЧ_СЮДА'
+//  Вставь свой API ключ с https://www.themoviedb.org/settings/api 
+const API_KEY = 'f11653c00a3494a4bc418f3db33e0c9b'
 const BASE    = 'https://api.themoviedb.org/3'
 export const IMG_BASE = 'https://image.tmdb.org/t/p/w500'
 
-// ─── Соответствие TMDB genre_id → наши жанры ─────────────────────────────
+//  Соответствие TMDB genre_id -> наши жанры 
 const GENRE_MAP = {
   28:    'Боевик',
   18:    'Драма',
@@ -20,7 +20,7 @@ const GENRE_MAP = {
   12:    'Боевик',
 }
 
-// ─── Поиск фильмов по строке ──────────────────────────────────────────────
+//  Поиск фильмов по строке 
 export async function searchMovies(query) {
   if (!query || query.trim().length < 2) return []
 
@@ -49,7 +49,7 @@ export async function searchMovies(query) {
   }
 }
 
-// ─── Маппинг первого подходящего жанра из массива ID ─────────────────────
+//  Маппинг первого подходящего жанра из массива ID 
 function mapGenre(genreIds = []) {
   for (const id of genreIds) {
     if (GENRE_MAP[id]) return GENRE_MAP[id]

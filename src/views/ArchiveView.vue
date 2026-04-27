@@ -95,7 +95,7 @@ function formatDate(ts) {
   white-space: nowrap;
 }
 
-/* ─── Пустое состояние ─── */
+/*  Пустое состояние  */
 .empty-state {
   text-align: center;
   padding: 5rem 1rem;
@@ -107,7 +107,7 @@ function formatDate(ts) {
 }
 .empty-state__icon { font-size: 2.5rem; }
 
-/* ─── Список архива ─── */
+/*  Список архива  */
 .archive-list {
   display: flex;
   flex-direction: column;

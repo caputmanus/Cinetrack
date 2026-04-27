@@ -14,7 +14,7 @@
 
       <div class="film-layout">
 
-        <!-- ─── Постер ─── -->
+        <!--  Постер  -->
         <div class="film-poster">
           <img
             v-if="item.posterPath"
@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <!-- ─── Информация ─── -->
+        <!--  Информация  -->
         <div class="film-info">
 
           <div class="film-info__meta">
@@ -116,7 +116,7 @@ function formatDate(ts) {
 }
 .back-link:hover { color: var(--primary); }
 
-/* ─── Лэйаут: постер + инфо ─── */
+/*  Лэйаут: постер + инфо  */
 .film-layout {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -124,7 +124,7 @@ function formatDate(ts) {
   align-items: flex-start;
 }
 
-/* ─── Постер ─── */
+/*  Постер  */
 .film-poster { display: flex; flex-direction: column; gap: 0.85rem; }
 .film-poster__img {
   width: 100%; border-radius: var(--radius);
@@ -145,7 +145,7 @@ function formatDate(ts) {
 .badge--done    { background: var(--success-dim); color: var(--success); border: 1px solid var(--success); }
 .badge--pending { background: var(--surface2);    color: var(--text-muted); border: 1px solid var(--border); }
 
-/* ─── Информация ─── */
+/*  Информация  */
 .film-info { display: flex; flex-direction: column; gap: 1.25rem; }
 
 .film-info__meta {
@@ -167,7 +167,7 @@ function formatDate(ts) {
 .film-meta-item__label { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
 .film-meta-item__value { font-size: 0.9rem; color: var(--text); font-weight: 500; }
 
-/* ─── Кнопки ─── */
+/*  Кнопки  */
 .film-actions { display: flex; gap: 0.65rem; flex-wrap: wrap; padding-top: 0.5rem; border-top: 1px solid var(--border); }
 
 .btn-toggle {
@@ -194,13 +194,13 @@ function formatDate(ts) {
 }
 .btn-delete:hover { background: var(--danger); color: #fff; }
 
-/* ─── 404 ─── */
+/*  404  */
 .not-found { text-align: center; padding: 5rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.9rem; }
 .not-found__icon { font-size: 3rem; }
 .not-found h2 { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; }
 .btn-back { display: inline-block; margin-top: 0.5rem; background: var(--primary); color: #fff; padding: 0.6rem 1.4rem; border-radius: 10px; font-weight: 600; }
 
-/* ─── Адаптивность ─── */
+/*  Адаптивность  */
 @media (max-width: 700px) {
   .film-layout { grid-template-columns: 1fr; }
   .film-poster { max-width: 240px; margin: 0 auto; }

@@ -4,7 +4,7 @@
 
     <div class="settings-stack">
 
-      <!-- ─── Тема ─── -->
+      <!--  Тема  -->
       <section class="settings-section">
         <h2 class="settings-section__title">Тема оформления</h2>
         <div class="btn-group">
@@ -19,7 +19,7 @@
         </div>
       </section>
 
-      <!-- ─── Цветовая схема ─── -->
+      <!--  Цветовая схема  -->
       <section class="settings-section">
         <h2 class="settings-section__title">Цветовая схема</h2>
         <div class="scheme-grid">
@@ -35,7 +35,7 @@
         </div>
       </section>
 
-      <!-- ─── Режим отображения ─── -->
+      <!--  Режим отображения  -->
       <section class="settings-section">
         <h2 class="settings-section__title">Режим отображения</h2>
         <div class="btn-group">
@@ -54,7 +54,7 @@
         </div>
       </section>
 
-      <!-- ─── Подтверждение удаления ─── -->
+      <!--  Подтверждение удаления  -->
       <section class="settings-section">
         <h2 class="settings-section__title">Безопасность</h2>
         <label class="toggle-row">
@@ -133,7 +133,7 @@ const SCHEMES = [
   color: var(--text-muted);
 }
 
-/* ─── Кнопки-переключатели ─── */
+/*  Кнопки-переключатели  */
 .btn-group { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
 .option-btn {
@@ -154,7 +154,7 @@ const SCHEMES = [
   font-weight: 700;
 }
 
-/* ─── Цветовые схемы ─── */
+/*  Цветовые схемы  */
 .scheme-grid { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
 .scheme-btn {
@@ -186,7 +186,7 @@ const SCHEMES = [
   border: 2px solid rgba(255,255,255,0.3);
 }
 
-/* ─── Toggle switch ─── */
+/*  Toggle switch  */
 .toggle-row {
   display: flex;
   align-items: center;

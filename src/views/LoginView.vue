@@ -2,13 +2,13 @@
   <div class="auth-page">
     <div class="auth-card">
 
-      <!-- ─── Логотип ─── -->
+      <!--  Логотип  -->
       <div class="auth-logo">
         <span class="auth-logo__icon">🎬</span>
         <span class="auth-logo__text">CineTrack</span>
       </div>
 
-      <!-- ─── Переключатель режима ─── -->
+      <!--  Переключатель режима  -->
       <div class="auth-tabs">
         <button
           :class="['auth-tab', { 'auth-tab--active': mode === 'login' }]"
@@ -20,7 +20,7 @@
         >Регистрация</button>
       </div>
 
-      <!-- ─── Форма ─── -->
+      <!--  Форма  -->
       <form class="auth-form" @submit.prevent="handleSubmit" novalidate>
 
         <div class="form-group" :class="{ 'form-group--error': errors.login }">
@@ -100,7 +100,7 @@ function switchMode(m) {
   errors.password   = ''
 }
 
-// ─── Валидация ────────────────────────────────────────────────────────────
+//  Валидация 
 function validate() {
   errors.login    = ''
   errors.password = ''
@@ -163,7 +163,7 @@ function handleSubmit() {
   gap: 1.5rem;
 }
 
-/* ─── Логотип ─── */
+/*  Логотип  */
 .auth-logo {
   display: flex;
   align-items: center;
@@ -176,7 +176,7 @@ function handleSubmit() {
 }
 .auth-logo__icon { font-size: 1.5rem; }
 
-/* ─── Табы ─── */
+/*  Табы  */
 .auth-tabs {
   display: flex;
   background: var(--surface2);
@@ -201,7 +201,7 @@ function handleSubmit() {
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
-/* ─── Форма ─── */
+/*  Форма  */
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -229,7 +229,7 @@ function handleSubmit() {
   color: var(--danger);
 }
 
-/* ─── Поле пароля с кнопкой показа ─── */
+/*  Поле пароля с кнопкой показа  */
 .pass-wrap {
   position: relative;
 }
@@ -251,7 +251,7 @@ function handleSubmit() {
 }
 .pass-toggle:hover { transform: translateY(-50%) scale(1.1); }
 
-/* ─── Глобальная ошибка ─── */
+/*  Глобальная ошибка  */
 .auth-error {
   background: var(--danger-dim);
   border: 1px solid var(--danger);
@@ -262,7 +262,7 @@ function handleSubmit() {
   font-weight: 500;
 }
 
-/* ─── Кнопка submit ─── */
+/*  Кнопка submit  */
 .btn-submit {
   background: var(--primary);
   color: #fff;
@@ -275,7 +275,7 @@ function handleSubmit() {
 }
 .btn-submit:hover { background: var(--primary-hover); }
 
-/* ─── Подсказка снизу ─── */
+/*  Подсказка снизу  */
 .auth-hint {
   text-align: center;
   font-size: 0.83rem;

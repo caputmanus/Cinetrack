@@ -82,7 +82,7 @@ function handleLogout() {
   gap: 1.5rem;
 }
 
-/* ─── Логотип ─── */
+/*  Логотип  */
 .header__logo {
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@ function handleLogout() {
 .header__logo:hover { color: var(--primary); }
 .logo-icon { font-size: 1.2rem; }
 
-/* ─── Навигация ─── */
+/*  Навигация  */
 .header__nav {
   display: flex;
   gap: 0.2rem;
@@ -125,7 +125,7 @@ function handleLogout() {
   font-weight: 600;
 }
 
-/* ─── Кнопка добавления ─── */
+/*  Кнопка добавления  */
 .btn-add {
   background: var(--primary);
   color: #fff;
@@ -141,7 +141,7 @@ function handleLogout() {
   transform: translateY(-1px);
 }
 
-/* ─── Бургер ─── */
+/*  Бургер  */
 .burger {
   display: none;
   background: none;
@@ -177,7 +177,7 @@ function handleLogout() {
 .burger__line.open::before  { transform: rotate(45deg); top: 0; }
 .burger__line.open::after   { transform: rotate(-45deg); top: 0; }
 
-/* ─── Мобильное меню ─── */
+/*  Мобильное меню  */
 .mobile-nav {
   display: flex;
   flex-direction: column;
@@ -192,7 +192,7 @@ function handleLogout() {
 .slide-enter-active, .slide-leave-active { transition: max-height 0.25s ease, opacity 0.2s ease; overflow: hidden; max-height: 400px; }
 .slide-enter-from, .slide-leave-to       { max-height: 0; opacity: 0; }
 
-/* ─── Пользователь ─── */
+/*  Пользователь  */
 .header__user {
   display: flex;
   align-items: center;
@@ -239,7 +239,7 @@ function handleLogout() {
   text-align: left;
 }
 
-/* ─── Адаптивность ─── */
+/*  Адаптивность  */
 @media (max-width: 768px) {
   .header__nav  { display: none; }
   .btn-add      { display: none; }

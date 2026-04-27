@@ -15,11 +15,11 @@ import SettingsView from '../views/SettingsView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 
 const routes = [
-  // ─── Публичные (без авторизации) ──────────────────────────────────────
+  //  Публичные (без авторизации) 
   { path: '/',       component: LandingView, meta: { public: true } },
   { path: '/login',  component: LoginView,   meta: { public: true } },
 
-  // ─── Защищённые ───────────────────────────────────────────────────────
+  //  Защищённые 
   { path: '/films',       component: HomeView     },
   { path: '/create',      component: CreateView   },
   { path: '/edit/:id',    component: EditView     },

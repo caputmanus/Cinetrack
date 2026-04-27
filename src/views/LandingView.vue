@@ -1,7 +1,7 @@
 <template>
   <div class="landing">
 
-    <!-- ─── Hero ─── -->
+    <!--  Hero  -->
     <section class="hero">
       <div class="hero__badge">✦ Персональный трекер фильмов</div>
       <h1 class="hero__title">
@@ -46,7 +46,7 @@
       </div>
     </section>
 
-    <!-- ─── Фичи ─── -->
+    <!--  Фичи  -->
     <section class="features">
       <h2 class="features__title">Всё что нужно</h2>
       <div class="features__grid">
@@ -58,7 +58,7 @@
       </div>
     </section>
 
-    <!-- ─── CTA снизу ─── -->
+    <!--  CTA снизу  -->
     <section class="cta-bottom">
       <h2 class="cta-bottom__title">Готов начать?</h2>
       <p class="cta-bottom__sub">Регистрация занимает 10 секунд. Никакой почты, никаких карт.</p>
@@ -82,7 +82,7 @@ const features = [
 <style scoped>
 .landing { display: flex; flex-direction: column; gap: 5rem; padding-bottom: 4rem; }
 
-/* ─── Hero ─── */
+/*  Hero  */
 .hero {
   text-align: center;
   display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
@@ -131,7 +131,7 @@ const features = [
 }
 .btn-secondary:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
 
-/* ─── Превью карточки ─── */
+/*  Превью карточки  */
 .hero__preview {
   display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
   margin-top: 1rem;
@@ -157,7 +157,7 @@ const features = [
 .preview-card__badge.done    { color: var(--success); }
 .preview-card__badge.pending { color: var(--text-muted); }
 
-/* ─── Фичи ─── */
+/*  Фичи  */
 .features { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
 .features__title {
   font-family: 'Syne', sans-serif; font-size: 1.9rem; font-weight: 800;
@@ -178,7 +178,7 @@ const features = [
 .feature-card__title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text); }
 .feature-card__desc  { font-size: 0.875rem; color: var(--text-muted); line-height: 1.55; }
 
-/* ─── CTA снизу ─── */
+/*  CTA снизу  */
 .cta-bottom {
   background: var(--surface); border: 1.5px solid var(--border);
   border-radius: var(--radius); padding: 3rem 2rem;

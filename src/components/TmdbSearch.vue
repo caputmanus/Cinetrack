@@ -1,7 +1,7 @@
 <template>
   <div class="tmdb-search" ref="rootEl">
 
-    <!-- ─── Поле поиска по библиотеке ─── -->
+    <!--  Поле поиска по библиотеке  -->
     <div class="tmdb-search__input-wrap">
       <span class="tmdb-search__icon">🎬</span>
       <input
@@ -20,7 +20,7 @@
       <span v-if="loading" class="tmdb-search__spinner">⟳</span>
     </div>
 
-    <!-- ─── Выпадашка с результатами ─── -->
+    <!--  Выпадашка с результатами  -->
     <transition name="drop">
       <div v-if="results.length > 0" class="tmdb-search__dropdown">
         <div
@@ -53,7 +53,7 @@
       </div>
     </transition>
 
-    <!-- ─── Подсказка при пустом запросе ─── -->
+    <!--  Подсказка при пустом запросе  -->
     <transition name="drop">
       <div v-if="noResults" class="tmdb-search__empty">
         Ничего не найдено. Заполните форму вручную.
@@ -79,7 +79,7 @@ const inputEl   = ref(null)
 
 let debounceTimer = null
 
-// ─── Debounce: запрос не раньше чем через 350мс после последнего ввода ────
+//  Debounce: запрос не раньше чем через 350мс после последнего ввода 
 function handleInput() {
   noResults.value = false
   results.value   = []
@@ -102,7 +102,7 @@ function handleInput() {
   }, 350)
 }
 
-// ─── Выбор фильма из списка ───────────────────────────────────────────────
+//  Выбор фильма из списка 
 function selectMovie(movie) {
   query.value   = movie.title
   results.value = []
@@ -110,7 +110,7 @@ function selectMovie(movie) {
   emit('select', movie)
 }
 
-// ─── Клавиатурная навигация ───────────────────────────────────────────────
+//  Клавиатурная навигация 
 function moveDown()   { if (activeIdx.value < results.value.length - 1) activeIdx.value++ }
 function moveUp()     { if (activeIdx.value > 0) activeIdx.value-- }
 function selectActive() {
@@ -124,7 +124,7 @@ function close() {
   noResults.value = false
 }
 
-// ─── Закрытие по клику вне компонента ────────────────────────────────────
+//  Закрытие по клику вне компонента 
 function handleOutsideClick(e) {
   if (rootEl.value && !rootEl.value.contains(e.target)) close()
 }
@@ -139,7 +139,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleOutsideClick))
   margin-bottom: 1rem;
 }
 
-/* ─── Поле ввода ─── */
+/*  Поле ввода  */
 .tmdb-search__input-wrap {
   position: relative;
 }
@@ -169,7 +169,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleOutsideClick))
 }
 @keyframes spin { to { transform: translateY(-50%) rotate(360deg); } }
 
-/* ─── Выпадашка ─── */
+/*  Выпадашка  */
 .tmdb-search__dropdown {
   position: absolute;
   top: calc(100% + 6px);

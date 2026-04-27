@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <!-- ─── Шапка страницы ─── -->
+    <!--  Шапка страницы  -->
     <div class="page-header">
       <div>
         <h1 class="page-title">Мои фильмы</h1>
@@ -10,7 +10,7 @@
       <router-link to="/create" class="btn-primary">+ Добавить фильм</router-link>
     </div>
 
-    <!-- ─── Счётчики ─── -->
+    <!--  Счётчики  -->
     <div class="stats-row">
       <div class="stat-chip">
         <span class="stat-chip__num">{{ totalCount }}</span>
@@ -26,10 +26,10 @@
       </div>
     </div>
 
-    <!-- ─── Фильтры ─── -->
+    <!--  Фильтры  -->
     <ItemFilters v-model="filters" :categories="categories" />
 
-    <!-- ─── Пустое состояние ─── -->
+    <!--  Пустое состояние  -->
     <div v-if="filteredItems.length === 0" class="empty-state">
       <p v-if="totalCount === 0">
         Список пуст.
@@ -38,7 +38,7 @@
       <p v-else>По вашим фильтрам ничего не найдено.</p>
     </div>
 
-    <!-- ─── Список ─── -->
+    <!--  Список  -->
     <ItemList
       v-else
       :items="filteredItems"
@@ -59,15 +59,15 @@ import ItemList        from '../components/ItemList.vue'
 const { activeItems, totalCount, activeCount, doneCount, toggleDone, softDelete } = useItems()
 const { confirmDelete } = useSettings()
 
-// ─── Состояние фильтров ──────────────────────────────────────────────────
+//  Состояние фильтров 
 const filters = ref({ search: '', category: '', status: '' })
 
-// ─── Уникальные жанры для фильтра ────────────────────────────────────────
+//  Уникальные жанры для фильтра 
 const categories = computed(() =>
   [...new Set(activeItems.value.map(i => i.category))].sort()
 )
 
-// ─── Реактивная фильтрация ────────────────────────────────────────────────
+//  Реактивная фильтрация 
 const filteredItems = computed(() => {
   let list = activeItems.value
 
@@ -89,7 +89,7 @@ const filteredItems = computed(() => {
   return list
 })
 
-// ─── Обработчики событий ──────────────────────────────────────────────────
+//  Обработчики событий 
 function handleToggle(id) {
   toggleDone(id)
 }
@@ -139,7 +139,7 @@ function handleDelete(id) {
   transform: translateY(-1px);
 }
 
-/* ─── Счётчики ─── */
+/*  Счётчики  */
 .stats-row {
   display: flex;
   gap: 0.75rem;
@@ -173,7 +173,7 @@ function handleDelete(id) {
   color: var(--text-muted);
 }
 
-/* ─── Пустое состояние ─── */
+/*  Пустое состояние  */
 .empty-state {
   text-align: center;
   padding: 4rem 1rem;

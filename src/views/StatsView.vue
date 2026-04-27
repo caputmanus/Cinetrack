@@ -2,7 +2,7 @@
   <div>
     <h1 class="page-title">Статистика</h1>
 
-    <!-- ─── Общий прогресс ─── -->
+    <!--  Общий прогресс  -->
     <div class="stats-card">
       <div class="progress-header">
         <span class="progress-label">Просмотрено</span>
@@ -21,7 +21,7 @@
       </p>
     </div>
 
-    <!-- ─── Карточки-счётчики ─── -->
+    <!--  Карточки-счётчики  -->
     <div class="counters-grid">
       <div class="counter-card">
         <span class="counter-card__num">{{ totalCount }}</span>
@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <!-- ─── Разбивка по жанрам ─── -->
+    <!--  Разбивка по жанрам  -->
     <div class="section-title">По жанрам</div>
     <div v-if="byGenre.length === 0" class="no-data">Нет данных</div>
     <div v-else class="genre-list">
@@ -70,14 +70,14 @@ import { useItems } from '../composables/useItems.js'
 
 const { activeItems, totalCount, activeCount, doneCount, deletedCount } = useItems()
 
-// ─── Процент просмотренных ───────────────────────────────────────────────
+//  Процент просмотренных 
 const progressPercent = computed(() =>
   totalCount.value === 0
     ? 0
     : Math.round((doneCount.value / totalCount.value) * 100)
 )
 
-// ─── Разбивка по жанрам ──────────────────────────────────────────────────
+//  Разбивка по жанрам 
 const byGenre = computed(() => {
   const map = {}
   activeItems.value.forEach(i => {
@@ -88,7 +88,7 @@ const byGenre = computed(() => {
     .sort((a, b) => b.count - a.count)
 })
 
-// ─── Склонение числительных ──────────────────────────────────────────────
+//  Склонение числительных 
 function plural(n, one, few, many) {
   const mod10  = n % 10
   const mod100 = n % 100
@@ -106,7 +106,7 @@ function plural(n, one, few, many) {
   margin-bottom: 1.75rem;
 }
 
-/* ─── Прогресс ─── */
+/*  Прогресс  */
 .stats-card {
   background: var(--surface);
   border: 1.5px solid var(--border);
@@ -143,7 +143,7 @@ function plural(n, one, few, many) {
   color: var(--text-muted);
 }
 
-/* ─── Счётчики ─── */
+/*  Счётчики  */
 .counters-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -183,7 +183,7 @@ function plural(n, one, few, many) {
   font-weight: 500;
 }
 
-/* ─── Жанры ─── */
+/*  Жанры  */
 .section-title {
   font-family: 'Syne', sans-serif;
   font-size: 1rem;
