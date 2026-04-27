@@ -4,14 +4,14 @@
 
     <div class="about-card">
       <p class="about-lead">
-        <strong>CineTrack</strong> — персональный трекер фильмов.
+        <strong>CineTrack</strong> - персональный трекер фильмов.
         Добавляй фильмы в список, отмечай просмотренные, фильтруй по жанрам.
       </p>
 
       <hr />
 
       <section>
-        <h2>Стек технологий</h2>
+        <h2>Стек технологийは</h2>
         <ul>
           <li>Vue 3 + Vite</li>
           <li>Composition API (<code>&lt;script setup&gt;</code>)</li>
@@ -21,7 +21,7 @@
       </section>
 
       <section>
-        <h2>Возможности</h2>
+        <h2>Возможностиは</h2>
         <ul>
           <li>Добавление, редактирование, мягкое удаление фильмов</li>
           <li>Отметка "Просмотрено" с визуальным отличием</li>
