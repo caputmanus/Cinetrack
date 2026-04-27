@@ -2,14 +2,13 @@
   <header class="header">
     <div class="header__inner">
 
-      <router-link to="/" class="header__logo">
-        <!-- <span class="logo-icon">🎬</span> -->
+      <router-link to="/" class="header__logo">        <span class="logo-icon">🎬</span>
         <span class="logo-text">CineTrack</span>
       </router-link>
 
       <!-- Навигация для десктопа -->
       <nav class="header__nav">
-        <router-link to="/"         class="nav-link">Главная</router-link>
+        <router-link to="/films"    class="nav-link">Главная</router-link>
         <router-link to="/archive"  class="nav-link">Архив</router-link>
         <router-link to="/stats"    class="nav-link">Статистика</router-link>
         <router-link to="/settings" class="nav-link">Настройки</router-link>
@@ -18,7 +17,7 @@
 
       <router-link to="/create" class="btn-add">+ Добавить</router-link>
 
-      <!-- Юзернейм + выход -->
+      <!-- Имя пользователя + выход -->
       <div class="header__user">
         <span class="header__username">{{ userName }}</span>
         <button class="btn-logout" @click="handleLogout" title="Выйти">↪</button>
@@ -33,7 +32,7 @@
     <!-- Мобильное меню -->
     <transition name="slide">
       <nav v-if="menuOpen" class="mobile-nav">
-        <router-link to="/"         class="nav-link" @click="closeMenu">Главная</router-link>
+        <router-link to="/films"    class="nav-link" @click="closeMenu">Главная</router-link>
         <router-link to="/archive"  class="nav-link" @click="closeMenu">Архив</router-link>
         <router-link to="/stats"    class="nav-link" @click="closeMenu">Статистика</router-link>
         <router-link to="/settings" class="nav-link" @click="closeMenu">Настройки</router-link>
@@ -83,6 +82,7 @@ function handleLogout() {
   gap: 1.5rem;
 }
 
+/* ─── Логотип ─── */
 .header__logo {
   display: flex;
   align-items: center;
@@ -95,8 +95,9 @@ function handleLogout() {
   transition: color var(--transition);
 }
 .header__logo:hover { color: var(--primary); }
-/* .logo-icon { font-size: 1.2rem; } */
+.logo-icon { font-size: 1.2rem; }
 
+/* ─── Навигация ─── */
 .header__nav {
   display: flex;
   gap: 0.2rem;
@@ -116,7 +117,7 @@ function handleLogout() {
   color: var(--text);
   background: var(--surface2);
 }
-
+/* Активный пункт меню выделен */
 .nav-link.router-link-exact-active,
 .nav-link.router-link-active {
   color: var(--primary);
@@ -124,6 +125,7 @@ function handleLogout() {
   font-weight: 600;
 }
 
+/* ─── Кнопка добавления ─── */
 .btn-add {
   background: var(--primary);
   color: #fff;
@@ -139,6 +141,7 @@ function handleLogout() {
   transform: translateY(-1px);
 }
 
+/* ─── Бургер ─── */
 .burger {
   display: none;
   background: none;
@@ -174,6 +177,7 @@ function handleLogout() {
 .burger__line.open::before  { transform: rotate(45deg); top: 0; }
 .burger__line.open::after   { transform: rotate(-45deg); top: 0; }
 
+/* ─── Мобильное меню ─── */
 .mobile-nav {
   display: flex;
   flex-direction: column;
@@ -188,6 +192,7 @@ function handleLogout() {
 .slide-enter-active, .slide-leave-active { transition: max-height 0.25s ease, opacity 0.2s ease; overflow: hidden; max-height: 400px; }
 .slide-enter-from, .slide-leave-to       { max-height: 0; opacity: 0; }
 
+/* ─── Пользователь ─── */
 .header__user {
   display: flex;
   align-items: center;
@@ -232,9 +237,9 @@ function handleLogout() {
   font-weight: 600;
   margin-top: 0.25rem;
   text-align: left;
-  margin-left: 0.25rem;
 }
- /* Адаптивка */
+
+/* ─── Адаптивность ─── */
 @media (max-width: 768px) {
   .header__nav  { display: none; }
   .btn-add      { display: none; }
